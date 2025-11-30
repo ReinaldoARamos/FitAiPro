@@ -6,7 +6,7 @@ import { DropdownMenuComponent } from "./Dropdownmenu";
 
 export function Header() {
   return (
-<div className="bg-neutral-950 flex fixed w-full py-4 items-center lg:justify-around justify-between px-6 lg:px-0  ">
+<div className="bg-neutral-950 flex fixed w-full py-4 items-center lg:justify-around justify-between px-6 lg:px-0  z-50">
       
       <div className="flex  gap-2 items-center">
         {" "}

@@ -11,7 +11,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/70 z-10"></div>
 
-        <div className="text-white flex flex-col items-center z-50 gap-4">
+        <div className="text-white flex flex-col items-center z-10 gap-4">
           <span className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 h-10 rounded-full">
             <Sparkles size={20} />
             Powered by AI
