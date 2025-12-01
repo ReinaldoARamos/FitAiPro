@@ -1,4 +1,5 @@
 import { ArrowLeftRight, Clock } from "lucide-react";
+import { WorkoutCard } from "./WorkoutCard";
 
 export default function WorkoutPlans() {
   return (
@@ -12,65 +13,15 @@ export default function WorkoutPlans() {
 
         <div className="text-black p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           
-          <div className="w-full max-w-[374px] h-[374px] bg-blue-950 rounded-md relative">
-            <div className="text-white flex flex-col gap-2 absolute left-2 bottom-2 w-full">
-              <p className="text-lg">Supino reto com barra</p>
-              <div className="flex gap-6">
-                <p className="flex items-center text-[16px] gap-2"><ArrowLeftRight /> 4x8-10</p>
-                <p className="flex items-center text-[16px] gap-2"><Clock /> 60s</p>
-              </div>
-            </div>
-          </div>
+          <WorkoutCard exercise={"Supino reto com barra"} reps={"3x10"} restTime={"60"} imageUrl={"https://images.unsplash.com/photo-1651346847980-ab1c883e8cc8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaCUyMHByZXNzJTIwZXhlcmNpc2V8ZW58MXx8fHwxNzY0MTMyNzM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"  }  />
+           <WorkoutCard exercise={"Supino reto com barra"} reps={"3x10"} restTime={"60"} imageUrl={"https://images.unsplash.com/photo-1651346847980-ab1c883e8cc8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaCUyMHByZXNzJTIwZXhlcmNpc2V8ZW58MXx8fHwxNzY0MTMyNzM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"  }  />
+            <WorkoutCard exercise={"Supino reto com barra"} reps={"3x10"} restTime={"60"} imageUrl={"https://images.unsplash.com/photo-1651346847980-ab1c883e8cc8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaCUyMHByZXNzJTIwZXhlcmNpc2V8ZW58MXx8fHwxNzY0MTMyNzM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"  }  />
+             <WorkoutCard exercise={"Supino reto com barra"} reps={"3x10"} restTime={"60"} imageUrl={"https://images.unsplash.com/photo-1651346847980-ab1c883e8cc8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaCUyMHByZXNzJTIwZXhlcmNpc2V8ZW58MXx8fHwxNzY0MTMyNzM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"  }  />
+              <WorkoutCard exercise={"Supino reto com barra"} reps={"3x10"} restTime={"60"} imageUrl={"https://images.unsplash.com/photo-1651346847980-ab1c883e8cc8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaCUyMHByZXNzJTIwZXhlcmNpc2V8ZW58MXx8fHwxNzY0MTMyNzM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"  }  />
+               <WorkoutCard exercise={"Supino reto com barra"} reps={"3x10"} restTime={"60"} imageUrl={"https://images.unsplash.com/photo-1651346847980-ab1c883e8cc8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaCUyMHByZXNzJTIwZXhlcmNpc2V8ZW58MXx8fHwxNzY0MTMyNzM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"  }  />
 
-          <div className="w-full max-w-[374px] h-[374px] bg-blue-950 rounded-md relative">
-            <div className="text-white flex flex-col gap-2 absolute left-2 bottom-2 w-full">
-              <p className="text-lg">Supino reto com barra</p>
-              <div className="flex gap-6">
-                <p className="flex items-center text-[16px] gap-2"><ArrowLeftRight /> 4x8-10</p>
-                <p className="flex items-center text-[16px] gap-2"><Clock /> 60s</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full max-w-[374px] h-[374px] bg-blue-950 rounded-md relative">
-            <div className="text-white flex flex-col gap-2 absolute left-2 bottom-2 w-full">
-              <p className="text-lg">Supino reto com barra</p>
-              <div className="flex gap-6">
-                <p className="flex items-center text-[16px] gap-2"><ArrowLeftRight /> 4x8-10</p>
-                <p className="flex items-center text-[16px] gap-2"><Clock /> 60s</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full max-w-[374px] h-[374px] bg-blue-950 rounded-md relative">
-            <div className="text-white flex flex-col gap-2 absolute left-2 bottom-2 w-full">
-              <p className="text-lg">Supino reto com barra</p>
-              <div className="flex gap-6">
-                <p className="flex items-center text-[16px] gap-2"><ArrowLeftRight /> 4x8-10</p>
-                <p className="flex items-center text-[16px] gap-2"><Clock /> 60s</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full max-w-[374px] h-[374px] bg-blue-950 rounded-md relative">
-            <div className="text-white flex flex-col gap-2 absolute left-2 bottom-2 w-full">
-              <p className="text-lg">Supino reto com barra</p>
-              <div className="flex gap-6">
-                <p className="flex items-center text-[16px] gap-2"><ArrowLeftRight /> 4x8-10</p>
-                <p className="flex items-center text-[16px] gap-2"><Clock /> 60s</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full max-w-[374px] h-[374px] bg-blue-950 rounded-md relative">
-            <div className="text-white flex flex-col gap-2 absolute left-2 bottom-2 w-full">
-              <p className="text-lg">Supino reto com barra</p>
-              <div className="flex gap-6">
-                <p className="flex items-center text-[16px] gap-2"><ArrowLeftRight /> 4x8-10</p>
-                <p className="flex items-center text-[16px] gap-2"><Clock /> 60s</p>
-              </div>
-            </div>
-          </div>
+       
+     
 
         </div>
 
