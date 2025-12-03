@@ -3,7 +3,7 @@ import { WorkoutCard } from "./WorkoutCard";
 
 export default function WorkoutPlans() {
   return (
-    <div className="w-screen flex items-center justify-center px-2">
+    <div className="w-full flex items-center justify-center px-2">
       <div className="rounded-md w-full max-w-[1216px] flex bg-white shadow-lg gap-2 flex-col">
         
         <div className="bg-neutral-900 w-full p-6 border-t rounded-t-md">
