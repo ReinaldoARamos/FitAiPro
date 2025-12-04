@@ -60,8 +60,8 @@ export function WorkoutCard({
             />
 
             <div className="absolute  opacity-0 inset-0 group-hover:opacity-10 transition duration-300 " />
-            <div className="hover:cursor-pointer  absolute left-1/2 top-1/2 font-thin -translate-x-1/2 -translate-y-1/2 bg-neutral-100 p-6 shadow-lg rounded-full z-20 transition duration-300">
-              <Play size={48} color="black" strokeWidth={1} />
+            <div className="hover:cursor-pointer  border-3 border-transparent group-hover:border-blue-600 text-black group-hover:text-blue-600  absolute left-1/2 top-1/2 font-thin -translate-x-1/2 -translate-y-1/2 bg-neutral-100 p-6 shadow-lg rounded-full z-20 transition duration-300">
+              <Play size={48} strokeWidth={1} />
             </div>
           </div>
 
@@ -88,7 +88,7 @@ export function WorkoutCard({
             </div>
 <div className="mb-6 p-6 bg-blue-50 border-blue-200 border rounded-lg">
   
-  <div className="flex  gap-2 text-xl mb-3 ">  <CircleAlert />Como executar</div>
+  <div className="flex  gap-2 text-xl mb-3 ">  <CircleAlert className="text-blue-600"/>Como executar</div>
   <span className="text-[16px] text-neutral-700">Deitado, abaixe a barra em direção à testa flexionando apenas os cotovelos, depois estenda completamente.</span>
   </div>
 
