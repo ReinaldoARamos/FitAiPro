@@ -22,44 +22,42 @@ export function Header() {
       </div>
       <div className="gap-6 lg:flex hidden ">
         <Link href={"/"}>
-        {pageSelector === "Inicio" ? (
-           
-          <span
-            className="text-neutral-50 transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer border-b-2 border-white"
-            onClick={() => handlePageSelector("Inicio")}
-          >
-            Inicio
-          </span>
-        ) : (
-           
-          <span
-            className="text-neutral-300 transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer border-b-2 border-transparent hover:border-white"
-            onClick={() => handlePageSelector("Inicio")}
-          >
-            Inicio
-          </span>
-        )}
+          {pageSelector === "Inicio" ? (
+            <span
+              className="text-neutral-50 transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer border-b-2 border-white"
+              onClick={() => handlePageSelector("Inicio")}
+            >
+              Inicio
+            </span>
+          ) : (
+            <span
+              className="text-neutral-300 transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer border-b-2 border-transparent hover:border-white"
+              onClick={() => handlePageSelector("Inicio")}
+            >
+              Inicio
+            </span>
+          )}
         </Link>
         {pageSelector === "Meu treino" ? (
           <Link href={"/workout"}>
-          {" "}
-          <span
-               className="text-neutral-50 transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer border-b-2 border-white"
-            onClick={() => handlePageSelector("Meu treino")}
-          >
-            Meu treino
-          </span>
-        </Link>
+            {" "}
+            <span
+              className="text-neutral-50 transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer border-b-2 border-white"
+              onClick={() => handlePageSelector("Meu treino")}
+            >
+              Meu treino
+            </span>
+          </Link>
         ) : (
           <Link href={"/workout"}>
-          {" "}
-          <span
-            className="text-neutral-300   transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer  border-b-2 border-transparent hover:border-white"
-            onClick={() => handlePageSelector("Meu treino")}
-          >
-            Meu treino
-          </span>
-        </Link>
+            {" "}
+            <span
+              className="text-neutral-300   transition-all duration-300 hover:[text-shadow:0_0_1px_white] cursor-pointer  border-b-2 border-transparent hover:border-white"
+              onClick={() => handlePageSelector("Meu treino")}
+            >
+              Meu treino
+            </span>
+          </Link>
         )}
       </div>
 
