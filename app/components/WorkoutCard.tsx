@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ArrowLeftRight, Clock, Play, X } from "lucide-react";
+import { ArrowLeftRight, CircleAlert, Clock, Play, X } from "lucide-react";
 import { Dialog } from "radix-ui";
 
 interface WorkoutCardProps {
@@ -52,37 +52,49 @@ export function WorkoutCard({
         </Dialog.Title>
 
         <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-3xl bg-neutral-50 text-neutral-900 -translate-x-1/2 -translate-y-1/2 rounded-lg ">
-          <div className="relative  overflow-hidden border-t rounded-t-lg bg-transparent group group-hover:bg-black/30">
+          <div className="relative overflow-hidden mb-6 bg-black border-t rounded-t-lg  group group-hover:cursor-pointer">
             <img
               src={imageUrl}
               alt={exercise}
-              className="w-full h-full max-h-[432px] object-cover  transition-transform duration-300 "
+              className="w-full h-full max-h-[432px] object-cover transition duration-300 group-hover:opacity-60"
             />
-            
 
-            <div className="absolute  left-1/2 top-1/2  font-thin -translate-x-1/2 -translate-y-1/2   bg-neutral-100 p-6  shadow-lg  rounded-full z-20 transition duration-300 ">
+            <div className="absolute  opacity-0 inset-0 group-hover:opacity-10 transition duration-300 " />
+            <div className="hover:cursor-pointer  absolute left-1/2 top-1/2 font-thin -translate-x-1/2 -translate-y-1/2 bg-neutral-100 p-6 shadow-lg rounded-full z-20 transition duration-300">
               <Play size={48} color="black" strokeWidth={1} />
             </div>
           </div>
 
-          <fieldset className="mb-[15px] flex items-center gap-5">
-            <label
-              className="w-[90px] text-right text-[15px]"
-              htmlFor="username"
-            >
-              Username
-            </label>
-            <input
-              className="inline-flex h-[35px] w-full flex-1 rounded px-2.5 text-[15px] shadow-[0_0_0_1px] outline-none focus:shadow-[0_0_0_2px]"
-              id="username"
-              defaultValue="@peduarte"
-            />
-          </fieldset>
+          <div className="mb-[15px]  px-8 ">
+            <h1 className="text-neutral-900 text-3xl mb-6">Triceps testa</h1>
+            <div className="p-4 flex items-center gap-34">
+              <div>
+                <h3 className="text-neutral-600 text-sm flex  gap-2">
+                  <ArrowLeftRight size={14} />
+                  Séries/Repetições
+                </h3>
 
-          <div className="mt-[25px] flex justify-end">
+                <div className="text-xl text-neutral-900">4x8-10</div>
+              </div>
+              <div>
+                <h3 className="text-neutral-600 text-sm flex  gap-2">
+                  <Clock size={14} />
+                  Descanso
+                </h3>
+
+                <div className="text-xl text-neutral-900">60s</div>
+              </div>
+              
+            </div>
+<div className="mb-6 p-6 bg-blue-50 border-blue-200 border rounded-lg">
+  
+  <div className="flex  gap-2 text-xl mb-3 ">  <CircleAlert />Como executar</div>
+  <span className="text-[16px] text-neutral-700">Deitado, abaixe a barra em direção à testa flexionando apenas os cotovelos, depois estenda completamente.</span>
+  </div>
+
             <Dialog.Close asChild>
-              <button className="inline-flex h-[35px] items-center justify-center rounded bg-green4 px-[15px] font-medium hover:bg-green5">
-                Save changes
+              <button className=" items-center py-3  w-full text-white justify-center rounded-lg bg-neutral-900 font-semibold hover:bg-neutral-800 transition duration-300 hover:cursor-pointer">
+             Fechar
               </button>
             </Dialog.Close>
           </div>
