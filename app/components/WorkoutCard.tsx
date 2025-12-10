@@ -46,12 +46,12 @@ export function WorkoutCard({
       </Dialog.Trigger>
 
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/60" />
+        <Dialog.Overlay className="lg:fixed lg:inset-0 bg-black/60" />
         <Dialog.Title className="hidden">
           Como executar o exercicio
         </Dialog.Title>
 
-        <Dialog.Content className="fixed left-1/2 top-1/2 w-full  h-screen lg:h-auto lg:max-w-3xl bg-neutral-50 text-neutral-900 -translate-x-1/2 -translate-y-1/2 rounded-lg ">
+        <Dialog.Content className="fixed z-50  left-1/2 top-1/2 w-full  h-screen  lg:h-auto  lg:max-w-3xl bg-neutral-50 text-neutral-900 -translate-x-1/2 -translate-y-1/2 rounded-lg ">
           <div className="relative overflow-hidden mb-6 bg-black border-t rounded-t-lg  group group-hover:cursor-pointer">
             <img
               src={imageUrl}
