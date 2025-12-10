@@ -7,6 +7,7 @@ interface WorkoutCardProps {
   imageUrl: string;
   reps: string;
   restTime: string;
+  howtoExecute: string
 }
 
 export function WorkoutCard({
@@ -14,6 +15,7 @@ export function WorkoutCard({
   imageUrl,
   reps,
   restTime,
+  howtoExecute
 }: WorkoutCardProps) {
   return (
     <Dialog.Root>
@@ -66,7 +68,7 @@ export function WorkoutCard({
           </div>
 
           <div className="mb-[15px]  px-8 ">
-            <h1 className="text-neutral-900 text-3xl mb-6">Triceps testa</h1>
+            <h1 className="text-neutral-900 text-3xl mb-6">{exercise}</h1>
             <div className="p-4 flex items-center gap-34">
               <div>
                 <h3 className="text-neutral-600 text-sm flex  gap-2">
@@ -74,7 +76,7 @@ export function WorkoutCard({
                   Séries/Repetições
                 </h3>
 
-                <div className="text-xl text-neutral-900">4x8-10</div>
+                <div className="text-xl text-neutral-900">{reps}</div>
               </div>
               <div>
                 <h3 className="text-neutral-600 text-sm flex  gap-2">
@@ -82,14 +84,14 @@ export function WorkoutCard({
                   Descanso
                 </h3>
 
-                <div className="text-xl text-neutral-900">60s</div>
+                <div className="text-xl text-neutral-900">{restTime}s</div>
               </div>
               
             </div>
 <div className="mb-6 p-6 bg-blue-50 border-blue-200 border rounded-lg">
   
   <div className="flex  gap-2 text-xl mb-3 ">  <CircleAlert className="text-blue-600"/>Como executar</div>
-  <span className="text-[16px] text-neutral-700">Deitado, abaixe a barra em direção à testa flexionando apenas os cotovelos, depois estenda completamente.</span>
+  <span className="text-[16px] text-neutral-700">{howtoExecute}</span>
   </div>
 
             <Dialog.Close asChild>
