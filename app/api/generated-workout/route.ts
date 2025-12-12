@@ -8,21 +8,35 @@ export async function POST(req: Request) {
     const body = await req.json();
 
 
-       const prompt = `
-    Gere um treino completo baseado nestas informações:
-    Objetivo: ${body.objetivo}
-    Experiência: ${body.experiencia}
-    Dias de treino: ${body.dias}
-    Foco: ${body.foco}
-    Restrições: ${body.restricoes}
+      const prompt = `
+Gere um treino completo baseado nestas informações:
+Objetivo: ${body.objetivo}
+Experiência: ${body.experiencia}
+Dias de treino: ${body.dias}
+Foco: ${body.foco}
+Restrições: ${body.restricoes}
 
-    Envie em JSON com o seguinte formato:
-    {
-      "treinoA": [...],
-      "treinoB": [...],
-      "treinoC": [...]
-    }
-    `;
+Retorne APENAS o JSON puro, NUNCA use markdown, NUNCA use \`\`\`json.
+
+Formato esperado:
+{
+  "treinoA": [ ... ],
+  "treinoB": [ ... ],
+  "treinoC": [ ... ]
+}
+
+Cada item deve ter:
+{
+  "exercise": string,
+  "reps": string,
+  "restTime": string,
+  "howtoExecute": string
+}
+
+
+
+`;
+
 
     const completion = await groq.chat.completions.create({
      messages: [{ role: "user", content: prompt }],
