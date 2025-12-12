@@ -15,7 +15,7 @@ Experiência: ${body.experiencia}
 Dias de treino: ${body.dias}
 Foco: ${body.foco}
 Restrições: ${body.restricoes}
-
+cada treino, no caso o A b e C tem apenas 6 exercicios
 Retorne APENAS o JSON puro, NUNCA use markdown, NUNCA use \`\`\`json.
 
 Formato esperado:

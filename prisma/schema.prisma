@@ -6,8 +6,33 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+/**
+ * model User {
+ * id    Int     @id @default(autoincrement())
+ * email String  @unique
+ * name  String?
+ * }
+ */
+model WorkoutPlan {
+  id        Int          @id @default(autoincrement())
+  createdAt DateTime     @default(now())
+  days      WorkoutDay[]
+}
+
+model WorkoutDay {
+  id          Int         @id @default(autoincrement())
+  label       String
+  workoutPlan WorkoutPlan @relation(fields: [planId], references: [id])
+  planId      Int
+  exercises   Exercise[]
+}
+
+model Exercise {
+  id           Int        @id @default(autoincrement())
+  exercise     String
+  reps         String
+  restTime     String
+  howToExecute String
+  workoutDay   WorkoutDay @relation(fields: [workoutDayId], references: [id])
+  workoutDayId Int
 }
