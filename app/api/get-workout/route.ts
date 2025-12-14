@@ -7,25 +7,20 @@ export async function GET(req: Request) {
     const userId = url.searchParams.get("userId");
 
     if (!userId) {
-      return NextResponse.json(
-        { error: "ID não encontrada" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "ID não encontrada" }, { status: 400 });
     }
 
-    const workout = await prisma.user.findMany({
-      where: { id: Number(userId) },
+    const workout = await prisma.workoutPlan.findMany({
+      where: {
+        userId: Number(userId),
+      },
       include: {
-        workoutPlans: {
+        days: {
           include: {
-            days: {
-              include: {
-                exercises: true
-              }
-            }
-          }
-        }
-      }
+            exercises: true,
+          },
+        },
+      },
     });
 
     return NextResponse.json(workout);
