@@ -25,6 +25,7 @@ export async function POST(req: Request) {
     });
 
     //criacao dos exercicios
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const createExercises = async (exlist: any[], workoutDayId: number) => {
   await Promise.all(
     exlist.map((ex) =>
@@ -55,6 +56,7 @@ const createExercises = async (exlist: any[], workoutDayId: number) => {
     await createExercises(treinoC, treinoCday.id);
 
     return NextResponse.json({ sucess: true, planId: plan.id });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return NextResponse.json(
       { error: "erro ao chegar a ficha" },
