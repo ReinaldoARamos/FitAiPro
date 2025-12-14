@@ -1,6 +1,7 @@
+
+import { prisma } from "@/app/lib/prisma";
 import { NextResponse } from "next/server";
-import PrismaClient from "../../lib/prisma";
-import prisma from "../../lib/prisma";
+
 
 export async function POST(req: Request) {
   try {
@@ -16,7 +17,7 @@ export async function POST(req: Request) {
         { status: 500 }
       );
     }
-    //funcao que eu criei para gerar o plano ja relacionando o user
+
     const plan = await prisma.workoutPlan.create({
       data: {
         userId: Number(userId),
@@ -24,22 +25,21 @@ export async function POST(req: Request) {
     });
 
     //criacao dos exercicios
-    const createExercises = (exlist: any[], workoutDayId: number) => {
-      Promise.all(
-        exlist.map((ex) => {
-          prisma.exercise.create({
-            data: {
-              exercise: ex.exercise,
-              reps: ex.reps,
-              restTime: ex.restTime,
-              howtoExecute: ex.howtoExecute,
-              workoutDayId,
-            },
-          });
-        })
-      );
-    };
-
+const createExercises = async (exlist: any[], workoutDayId: number) => {
+  await Promise.all(
+    exlist.map((ex) =>
+      prisma.exercise.create({
+        data: {
+          exercise: ex.exercise,
+          reps: ex.reps,
+          restTime: ex.restTime,
+          howtoExecute: ex.howtoExecute,
+          workoutDayId,
+        },
+      })
+    )
+  );
+};
     const treinoAday = await prisma.workoutDay.create({
       data: { label: "TreinoA", planId: plan.id },
     });

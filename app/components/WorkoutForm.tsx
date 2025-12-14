@@ -40,8 +40,19 @@ export function WorkoutForm() {
       body: JSON.stringify(data),
     });
 
-    const treino : TreinoResponse= await res.json()
-  setCard(treino);
+    const treino: TreinoResponse = await res.json();
+    setCard(treino);
+
+    await fetch("/api/workout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: 1,
+        treinoA: card?.treinoA,
+        treinoB: card?.treinoB,
+        treinoC: card?.treinoC,
+      }),
+    });
 
     console.log(treino);
   }
@@ -50,7 +61,7 @@ export function WorkoutForm() {
     <div className="bg-white shadow-lg p-8 rounded-md w-[704px]">
       <h1 className="text-3xl mb-8">Preencha suas informações</h1>
 
-      <form className="flex-col flex gap-6" onSubmit={handleForm}>
+      <form className="flex-col flex gap-6" onSubmit={handleForm}>  
         <div className="flex flex-col text-[16px] text-neutral-700">
           <label className="text-[16px] flex gap-2 items-center mb-2">
             <Target size={20} />
@@ -158,16 +169,15 @@ export function WorkoutForm() {
         </button>
       </form>
 
-      
       {card && (
         <div>
           <h2>Treino A</h2>
           {card.treinoA.map((ex, index) => (
             <div key={index}>
               <p>Exercicio{ex.exercise}</p>
-               <p>Reps{ex.reps}</p>
-                <p>Descanso{ex.restTime}</p>
-                 <p>como faz{ex.howtoExecute}</p>
+              <p>Reps{ex.reps}</p>
+              <p>Descanso{ex.restTime}</p>
+              <p>como faz{ex.howtoExecute}</p>
             </div>
           ))}
         </div>

@@ -1,41 +1,42 @@
 datasource db {
-  provider = "sqlite" // ou "postgresql", "mysql"
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
 }
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 model User {
-  id           Int           @id @default(autoincrement())
-  email        String        @unique
-  name         String?
-  workoutPlans WorkoutPlan[]
+    id           Int           @id @default(autoincrement())
+    email        String        @unique
+    name         String?
+    workoutPlans WorkoutPlan[]
 }
 
 model WorkoutPlan {
-  id        Int          @id @default(autoincrement())
-  user      User?        @relation(fields: [userId], references: [id])
-  userId    Int?
-  createdAt DateTime     @default(now())
-  days      WorkoutDay[] // Treino A, B, C...
+    id        Int          @id @default(autoincrement())
+    user      User?        @relation(fields: [userId], references: [id])
+    userId    Int?
+    createdAt DateTime     @default(now())
+    days      WorkoutDay[]
 }
 
 model WorkoutDay {
-  id          Int         @id @default(autoincrement())
-  label       String // "treinoA", "treinoB", "treinoC"
-  workoutPlan WorkoutPlan @relation(fields: [planId], references: [id])
-  planId      Int
-  exercises   Exercise[]
+    id          Int         @id @default(autoincrement())
+    label       String // "treinoA", "treinoB", "treinoC"
+    workoutPlan WorkoutPlan @relation(fields: [planId], references: [id])
+    planId      Int
+    exercises   Exercise[]
 }
 
 model Exercise {
-  id           Int    @id @default(autoincrement())
-  exercise     String
-  reps         String
-  restTime     String
-  howtoExecute String
+    id           Int    @id @default(autoincrement())
+    exercise     String
+    reps         String
+    restTime     String
+    howtoExecute String
 
-  workoutDay   WorkoutDay @relation(fields: [workoutDayId], references: [id])
-  workoutDayId Int
+    workoutDay   WorkoutDay @relation(fields: [workoutDayId], references: [id])
+    workoutDayId Int
 }
