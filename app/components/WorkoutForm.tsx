@@ -169,19 +169,6 @@ export function WorkoutForm() {
         </button>
       </form>
 
-      {card && (
-        <div>
-          <h2>Treino A</h2>
-          {card.treinoA.map((ex, index) => (
-            <div key={index}>
-              <p>Exercicio{ex.exercise}</p>
-              <p>Reps{ex.reps}</p>
-              <p>Descanso{ex.restTime}</p>
-              <p>como faz{ex.howtoExecute}</p>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

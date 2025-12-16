@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ArrowLeftRight, CircleAlert, Clock, Play, X } from "lucide-react";
+import { ArrowLeftRight, CircleAlert, Clock, Play } from "lucide-react";
 import { Dialog } from "radix-ui";
 
 interface WorkoutCardProps {
@@ -8,10 +8,12 @@ interface WorkoutCardProps {
   reps: string;
   restTime: string;
   howtoExecute: string
+  key: number
 }
 
 export function WorkoutCard({
   exercise,
+  key,
   imageUrl,
   reps,
   restTime,
@@ -40,7 +42,7 @@ export function WorkoutCard({
                 <ArrowLeftRight /> {reps}
               </p>
               <p className="flex items-center text-[16px] gap-2">
-                <Clock /> {restTime}s
+                <Clock /> {restTime}
               </p>
             </div>
           </div>
@@ -84,7 +86,7 @@ export function WorkoutCard({
                   Descanso
                 </h3>
 
-                <div className="text-xl text-neutral-900">{restTime}s</div>
+                <div className="text-xl text-neutral-900">{restTime}</div>
               </div>
               
             </div>
