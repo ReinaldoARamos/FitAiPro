@@ -40,21 +40,20 @@ export function WorkoutForm() {
       body: JSON.stringify(data),
     });
 
-    const treino: TreinoResponse = await res.json();
-    setCard(treino);
+  const treino: TreinoResponse = await res.json();
+setCard(treino);
 
-    await fetch("/api/workout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        userId: 1,
-        treinoA: card?.treinoA,
-        treinoB: card?.treinoB,
-        treinoC: card?.treinoC,
-      }),
-    });
-
-    console.log(treino);
+// use o treino, NÃO o state
+await fetch("/api/workout", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    userId: 1,
+    treinoA: treino.treinoA,
+    treinoB: treino.treinoB,
+    treinoC: treino.treinoC,
+  }),
+});
   }
 
   return (

@@ -60,7 +60,7 @@ export function WorkoutCard({
             <img
               src={imageUrl}
               alt={exercise}
-              className="w-full h-full max-h-[432px] object-cover transition duration-300 group-hover:opacity-60"
+              className="w-full h-full max-h-108 object-cover transition duration-300 group-hover:opacity-60"
             />
 
             <div className="absolute  opacity-0 inset-0 group-hover:opacity-10 transition duration-300 " />
