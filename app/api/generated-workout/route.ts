@@ -17,7 +17,9 @@ Foco: ${body.foco}
 Restrições: ${body.restricoes}
 cada treino, no caso o A b e C tem apenas 6 exercicios
 Retorne APENAS o JSON puro, NUNCA use markdown, NUNCA use \`\`\`json.
-
+gere exercicios focando na restricao da pessoa 
+o resttime tem que ter o seguinte formatp: numero de repsx numero de serios: exemplo: 12x3
+gere em portugues
 Formato esperado:
 {
   "treinoA": [ ... ],
