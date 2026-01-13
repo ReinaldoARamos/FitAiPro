@@ -33,11 +33,14 @@ Cada item deve ter:
   "reps": string,
   "restTime": string,
   "howtoExecute": string
+  imnageUrl: string(nesse caso voce busca na web uma url de uma imagem relacionada ao exercicio)
 }
 
 
 
 `;
+
+
 
 
     const completion = await groq.chat.completions.create({
@@ -46,6 +49,7 @@ Cada item deve ter:
     temperature: 0.3
   });
   const response = completion.choices[0]?.message?.content;
+
 
         return new Response(response, { status: 200 });
    } catch (err) {

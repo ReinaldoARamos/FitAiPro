@@ -21,6 +21,7 @@ export function WorkoutForm() {
 
   async function handleForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+  const form = e.currentTarget; 
 
     const formData = new FormData(e.currentTarget);
 
@@ -42,6 +43,8 @@ export function WorkoutForm() {
 
   const treino: TreinoResponse = await res.json();
 setCard(treino);
+console.log(treino)
+
 
 // use o treino, NÃO o state
 await fetch("/api/workout", {
@@ -54,6 +57,7 @@ await fetch("/api/workout", {
     treinoC: treino.treinoC,
   }),
 });
+ form.reset();
   }
 
   return (

@@ -8,12 +8,11 @@ interface WorkoutCardProps {
   reps: string;
   restTime: string;
   howtoExecute: string
-  key: number
+  
 }
 
 export function WorkoutCard({
   exercise,
-  key,
   imageUrl,
   reps,
   restTime,

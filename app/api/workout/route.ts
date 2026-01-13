@@ -42,13 +42,13 @@ const createExercises = async (exlist: any[], workoutDayId: number) => {
   );
 };
     const treinoAday = await prisma.workoutDay.create({
-      data: { label: "TreinoA", planId: plan.id },
+      data: { label: "Treino A", planId: plan.id },
     });
     const treinoBday = await prisma.workoutDay.create({
-      data: { label: "TreinoB", planId: plan.id },
+      data: { label: "Treino B", planId: plan.id },
     });
     const treinoCday = await prisma.workoutDay.create({
-      data: { label: "TreinoC", planId: plan.id },
+      data: { label: "Treino C", planId: plan.id },
     });
 
     await createExercises(treinoA, treinoAday.id);

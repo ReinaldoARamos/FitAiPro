@@ -1,3 +1,4 @@
+ 
 "use client";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -63,14 +64,17 @@ export default function WorkoutPlan() {
 
                 <div className="text-black p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {day.exercises.map((exercise) => (
+                    <div key={exercise.id}> 
                     <WorkoutCard
-                      key={exercise.id}
+                   
                       exercise={exercise.exercise}
                       reps={exercise.reps}
                       restTime={exercise.restTime}
                       howtoExecute={exercise.howtoExecute}
                       imageUrl="https://images.unsplash.com/photo-1651346847980-ab1c883e8cc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZW5jaCUyMHByZXNzJTIwZXhlcmNpc2V8ZW58MXx8fHwxNzY0MTMyNzM1fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     />
+                \
+                    </div>
                   ))}
                 </div>
               </div>
