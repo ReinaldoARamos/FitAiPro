@@ -21,7 +21,7 @@ export function WorkoutForm() {
 
   async function handleForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-  const form = e.currentTarget; 
+    const form = e.currentTarget;
 
     const formData = new FormData(e.currentTarget);
 
@@ -41,30 +41,72 @@ export function WorkoutForm() {
       body: JSON.stringify(data),
     });
 
-  const treino: TreinoResponse = await res.json();
-setCard(treino);
-console.log(treino)
+    const treino: TreinoResponse = await res.json();
+    setCard(treino);
+    console.log(treino);
 
+    // use o treino, NÃO o state
+    await fetch("/api/workout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: 1,
+        treinoA: treino.treinoA,
+        treinoB: treino.treinoB,
+        treinoC: treino.treinoC,
+      }),
+    });
+    form.reset();
+  }
 
-// use o treino, NÃO o state
-await fetch("/api/workout", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    userId: 1,
-    treinoA: treino.treinoA,
-    treinoB: treino.treinoB,
-    treinoC: treino.treinoC,
-  }),
-});
- form.reset();
+  async function updateForm(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    const formData = new FormData(e.currentTarget);
+
+    const data = {
+      objetivo: formData.get("treino"),
+      experiencia: formData.get("experiencia"), // <-- CORRIGIDO
+      dias: formData.get("dias"),
+      foco: formData.get("foco"),
+      restricoes: formData.get("restricoes"),
+    };
+
+     const res = await fetch("/api/generated-workout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const treino: TreinoResponse = await res.json();
+    setCard(treino);
+    console.log(treino);
+
+    // use o treino, NÃO o state
+    await fetch("/api/update-workout", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        planId: 23,
+        treinoA: treino.treinoA,
+        treinoB: treino.treinoB,
+        treinoC: treino.treinoC,
+      }),
+    });
+    //form.reset();
   }
 
   return (
     <div className="bg-white shadow-lg p-8 rounded-md w-[704px]">
       <h1 className="text-3xl mb-8">Preencha suas informações</h1>
 
-      <form className="flex-col flex gap-6" onSubmit={handleForm}>  
+      <form
+        className="flex-col flex gap-6"
+        onSubmit={card ? updateForm : handleForm}
+      >
         <div className="flex flex-col text-[16px] text-neutral-700">
           <label className="text-[16px] flex gap-2 items-center mb-2">
             <Target size={20} />
@@ -171,7 +213,6 @@ await fetch("/api/workout", {
           Gerar ficha com IA
         </button>
       </form>
-
     </div>
   );
 }

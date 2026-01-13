@@ -50,7 +50,7 @@ export async function PATCH(req: Request) {
     await updateExercises(treinoA, treinoAday.id);
     await updateExercises(treinoB, treinoBday.id);
     await updateExercises(treinoC, treinoCday.id);
-
+    console.log("update")
     return NextResponse.json({ sucess: true });
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {

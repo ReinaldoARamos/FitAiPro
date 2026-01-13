@@ -54,8 +54,9 @@ const createExercises = async (exlist: any[], workoutDayId: number) => {
     await createExercises(treinoA, treinoAday.id);
     await createExercises(treinoB, treinoBday.id);
     await createExercises(treinoC, treinoCday.id);
-
+    console.log("create")
     return NextResponse.json({ sucess: true, planId: plan.id });
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return NextResponse.json(
